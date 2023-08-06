@@ -42,10 +42,12 @@ export class ProductsService {
     const product = this.findOne(id);
     if (product) {
       const index = this.products.findIndex((item) => item.id === id);
-      this.products[index] = {
-        ...product, // Mantén las propiedades originales del producto
-        ...payload, // Actualiza con las nuevas propiedades del payload
-      };
+      // con  Object.assign combinamos dos objetos
+      this.products[index] = Object.assign(product, payload);
+      // this.products[index] = {
+      //   ...product, // Mantén las propiedades originales del producto
+      //   ...payload, // Actualiza con las nuevas propiedades del payload
+      // };
       return this.products[index];
     }
     return;
