@@ -9,13 +9,13 @@ import {
   Delete,
   HttpStatus,
   HttpCode,
-  Res,
+  // Res,
   // ParseIntPipe,
 } from '@nestjs/common';
-import { Response } from 'express';
-import { ProductsService } from '../../services/products/products.service';
+// import { Response } from 'express';
+import { ProductsService } from '../services/products.service';
 import { ParseIntPipe } from '../../common/parse-int/parse-int.pipe';
-import { CreateProductDto, UpdateProductDto } from '../../dtos/products.dto';
+import { CreateProductDto, UpdateProductDto } from '../dtos/products.dtos';
 import { ApiTags } from '@nestjs/swagger';
 @ApiTags('products')
 @Controller('products')
