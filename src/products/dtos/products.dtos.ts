@@ -5,8 +5,7 @@ import {
   IsNotEmpty,
   IsPositive,
 } from 'class-validator';
-import { PartialType } from '@nestjs/mapped-types';
-// Los DTOs son objetos que se utilizan para transferir datos entre diferentes partes de una aplicación, como entre el frontend y el backend, o entre diferentes capas de una arquitectura de software.
+import { PartialType } from '@nestjs/swagger'; // Los DTOs son objetos que se utilizan para transferir datos entre diferentes partes de una aplicación, como entre el frontend y el backend, o entre diferentes capas de una arquitectura de software.
 export class CreateProductDto {
   //Al utilizar la palabra clave readonly, se indica que una vez que se haya creado una instancia de la clase CreateProductDto, sus propiedades no podrán ser modificadas. Esto se hace para asegurar que los datos de entrada no sean modificados inadvertidamente mientras se transfieren entre diferentes partes del sistema.
   @IsString()

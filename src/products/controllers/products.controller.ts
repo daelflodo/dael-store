@@ -16,13 +16,14 @@ import {
 import { ProductsService } from '../services/products.service';
 import { ParseIntPipe } from '../../common/parse-int/parse-int.pipe';
 import { CreateProductDto, UpdateProductDto } from '../dtos/products.dtos';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiTags, ApiOperation } from '@nestjs/swagger';
 @ApiTags('products')
 @Controller('products')
 export class ProductsController {
   constructor(private productsServices: ProductsService) {}
   //este ejemplo podria servir para usarse con filtros
   @Get()
+  @ApiOperation({ summary: 'List of products' })
   getProducts(
     @Query('limit') limit = 100,
     @Query('offset') offset = 0,
